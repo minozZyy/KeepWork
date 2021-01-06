@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keepwork.fileetl.mapper.FileETLMapper">
+
+    <select id="Sel" resultType="com.keepwork.fileetl.model.FileETL">
+        SELECT groupid,topicname,partitionname,useoffset,statusts FROM kafka_consumer
+    </select>
+
+</mapper>
