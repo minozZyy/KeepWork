@@ -1,0 +1,28 @@
+
+spring:
+#  rabbitmq:
+#    host: ${RABBIT_HOST:localhost}
+  datasource:
+    #schema: classpath:/mysql.sql
+    url: jdbc:mysql://localhost:3306/threesome?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    # Switch this on to create the schema on startup:
+    #continueOnError: true
+
+sleuth:
+  enabled: false
+
+zipkin:
+  storage:
+    type: mysql
+
+server:
+  port: 9411
+
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false

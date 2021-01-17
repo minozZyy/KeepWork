@@ -7,7 +7,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="FileETL" />
+        <module name="FileETLSrv" />
+        <module name="ZipkinServer" />
       </profile>
     </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="FileETL" options="" />
+      <module name="FileETLSrv" options="" />
+      <module name="ZipkinServer" options="" />
+    </option>
   </component>
 </project>

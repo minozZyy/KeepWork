@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+  <property>
+    <name>hbase.rootdir</name>
+    <value>hdfs://zhouyongyao/hbase</value>
+  </property>
+
+  <property>
+    <name>hbase.cluster.distributed</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <name>hbase.master</name>
+    <value>60000</value>
+  </property>
+
+  <property>
+    <name>hbase.tmp.dir</name>
+    <value>/home/hbase/tmp</value>
+  </property>
+
+  <property>
+    <name>hbase.zookeeper.quorum</name>
+    <value>hadoop01:2181,hadoop02:2181,hadoop03:2181</value>
+  </property>
+
+  <property>
+    <name>hbase.zookeeper.property.dataDir</name>
+    <value>/home/hadoop/zkdata</value>
+  </property>
+
+  <property>
+    <name>hbase.zookeeper.property.clientPort</name>
+    <value>2181</value>
+  </property>
+
+  <property>
+    <name>zookeeper.session.timeout</name>
+    <value>120000</value>
+  </property>
+ 
+  <property>
+    <name>hbase.regionserver.restart.on.zk.expire</name>
+    <value>true</value>
+  </property>
+
+  <!--默认: 10  :RegionServers受理的RPC Server实例数量。对于Master来说，这个属性是Master受理的handler数量.-->
+  <property>
+    <name>hbase.regionserver.handler.count</name>
+    <value>100</value>
+  </property>
+
+  <!--默认: 1  :当调用Scanner的next方法，而值又不在缓存里的时候，从服务端一次获取的行数。越大的值意味着Scanner会快一些，但是会占用更多的内存。 -->
+  <property>
+    <name>hbase.client.scanner.caching</name>
+    <value>100</value>
+  </property>
+
+  <!--默认: false  :体验特性：启用memStore分配本地缓冲区。这个特性是为了防止在大量写负载的时候堆的碎片过多。这可以减少GC操作的频率。说明：减少因内存碎片导致的Full GC，提高整体性能。-->
+  <property>
+    <name>hbase.hregion.memstore.mslab.enabled</name>
+    <value>true</value>
+  </property>
+
+  <!--默认: 10  :客户端最多重试次数,可以设为11。 -->
+  <property> 
+    <name>hbase.client.retries.number</name>  
+    <value>11</value> 
+  </property> 
+
+  <!--默认: false  :建议设为true，关闭消息缓冲。 -->
+  <property> 
+    <name>hbase.ipc.client.tcpnodelay</name>  
+    <value>true</value> 
+  </property>  
+
+  <!--默认: 60000  :表示HBase客户端发起一次scan操作的rpc调用至得到响应之间总的超时时间。-->
+  <property>
+    <name>hbase.client.scanner.timeout.period</name>
+    <value>120000</value>
+  </property>
+
+  <!--默认: 60000  :该参数表示一次RPC请求的超时时间。如果某次RPC时间超过该值，客户端就会主动关闭socket。 -->
+  <property>
+    <name>hbase.rpc.timeout</name>
+    <value>180000</value>
+  </property>
+
+  <property>    
+    <name>hbase.hregion.memstore.block.multiplier</name>    
+    <value>8</value>    
+  </property>
+
+  <property>
+    <name>hbase.hstore.blockingStoreFiles</name>
+    <value>30</value>
+  </property>
+
+  <property>
+    <name>hbase.client.write.buffer</name>
+    <value>5242880</value>
+  </property>
+
+  <property>
+    <name>hbase.wal.provider</name>
+    <value>filesystem</value>
+  </property>
+
+  <property>
+    <name>hbase.table.sanity.checks</name>
+    <value>false</value>
+  </property>
+</configuration>
